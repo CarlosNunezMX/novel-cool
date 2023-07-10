@@ -2,6 +2,16 @@
 Dependecy-Lowest NovelCool scrapper for nodejs, just using `cheerio` for DOM parsing
 using ES6 for Classes and Modules
 
+## Now in npm 🥳
+Install this module with
+```bash
+# npm
+npm i novel-cool
+
+#pnpm
+pnpm add novel-cool
+```
+
 ## RoadMap
 This is our RoadMap ⏲️
 
