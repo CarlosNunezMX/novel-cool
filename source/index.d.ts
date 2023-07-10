@@ -1,4 +1,4 @@
-export type SearchResult = {
+type SearchResult = {
     bookImage: string,
     bookReview: string,
     bookViews: string,
@@ -9,7 +9,7 @@ export type SearchResult = {
     bookID: string
 }
 
-export type TManga = {
+type TManga = {
     Name: string,
     OnGoing: boolean,
     Image: string,
@@ -22,9 +22,31 @@ export type TManga = {
     Author: string
 }
 
-export type Episode = {
+type TEpisode = {
     Name: string,
     Id: string,
     Views: string,
     Date: string
+}
+
+
+type MangaInfo = {
+    Episodes: TEpisode[],
+    Manga: TManga
+}
+type lang = "en" | "es" | "br" | "it" | "ru" | "de";
+
+export class Search{
+    constructor(lang: lang, word: string);
+    exec(): Promise<SearchResult[]>;
+}
+
+export class Manga{
+    constructor(lang: lang, id: string);
+    exec(): Promise<MangaInfo>;
+}
+
+export class Episode{
+    constructor(lang: lang, id: string);
+    exec(): Promise<string[]>;
 }
