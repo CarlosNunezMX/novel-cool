@@ -15,7 +15,7 @@ export class Episode{
 
     async exec(){
         /*** @type {import("cheerio").CheerioAPI}*/
-        const $ = await getResource({url: this.url, domParse: true, debug: true});
+        const $ = await getResource({url: this.url, domParse: true});
         const $Images = $("img.mangaread-manga-pic");
         
         // First Block
@@ -39,7 +39,7 @@ export class Episode{
 
     async getNextPage(url){
         /*** @type {import("cheerio").CheerioAPI}*/
-        const $ = await getResource({url, domParse: true, debug: true});
+        const $ = await getResource({url, domParse: true});
         const $Images = $("img.mangaread-manga-pic");
 
         // First Block
