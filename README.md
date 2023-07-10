@@ -4,11 +4,12 @@ using ES6 for Classes and Modules
 
 ## RoadMap
 This is our RoadMap ⏲️
-[x] Select Languaje
-[x] Search
-[x] Get Manga Info
-[x] Get Episode Images
-[] View home page manga 
+
+- [x] Select Languaje
+- [x] Search
+- [x] Get Manga Info
+- [x] Get Episode Images
+- [ ] View home page manga 
 
 ## Using
 Just import from the module and instance it, then run exec method
