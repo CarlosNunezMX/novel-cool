@@ -1,7 +1,9 @@
+import { CheerioAPI } from "cheerio"
+
 type SearchResult = {
     bookImage: string,
-    bookReview: string,
-    bookViews: string,
+    bookReview: number,
+    bookViews: number,
     bookDate: string,
     bookTags: string[],
     bookType: "Manga" | "Novel",
@@ -11,42 +13,42 @@ type SearchResult = {
 
 type TManga = {
     Name: string,
-    OnGoing: boolean,
     Image: string,
     Type: string,
-    Followers: string,
-    Review: string,
     Description: string,
-    Tags: string,
-    Reviews: string,
     Author: string
+    Tags: string,
+    OnGoing: boolean,
+    Followers: number,
+    Review: number,
+    Reviews: number,
 }
 
 type TEpisode = {
     Name: string,
     Id: string,
-    Views: string,
     Date: string
+    Views: number,
 }
-
-
+type QueryType = { lang: string, id: string }
+type SpecialQuery = {
+    $: CheerioAPI,
+} | {
+    lang?: string,
+    id?: string
+}
 type MangaInfo = {
     Episodes: TEpisode[],
     Manga: TManga
 }
 type lang = "en" | "es" | "br" | "it" | "ru" | "de";
 
-export class Search{
-    constructor(lang: lang, word: string);
-    exec(): Promise<SearchResult[]>;
-}
+export function Search(Query: QueryType): Promise<SearchResult[]>
+type FManga = {
+    getMangaInfo: (Query: SpecialQuery) => Promise<{Manga: TManga, $: CheerioAPI}> ,
+    getEpisodes: (Query: SpecialQuery) => Promise<TEpisode[]>,
+    getBoth: (Query: QueryType) => Promise<MangaInfo>
+};
 
-export class Manga{
-    constructor(lang: lang, id: string);
-    exec(): Promise<MangaInfo>;
-}
-
-export class Episode{
-    constructor(lang: lang, id: string);
-    exec(): Promise<string[]>;
-}
+export const Manga: FManga;
+export function Episode(Query: QueryType): Promise<string[]>

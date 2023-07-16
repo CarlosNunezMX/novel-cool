@@ -3,8 +3,10 @@ import Errors from "./Errors.js"
 
 const Headers = {
   "Cookie": "novelcool_webp_valid=true;protocol_cookie_is_show=1; novelcool_list_num=10",
-  "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
-}
+  "User-Agent": "@carlosnunezmx/novel-cool Web Scrapper"
+};
+
+
 export async function getResource({url, domParse, debug}){
   const request = await fetch(url, {headers: Headers});
   if(debug) console.log(url)
