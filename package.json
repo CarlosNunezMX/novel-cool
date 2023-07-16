@@ -11,8 +11,8 @@
     "type": "git",
     "url": "https://github.com/CarlosNunezMX/novel-cool.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["novelcool", "manga", "novel-cool", "novelcool scrapper"],
+  "author": "CarlosNunezMX",
   "license": "ISC",
   "dependencies": {
     "cheerio": "1.0.0-rc.12"
