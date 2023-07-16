@@ -1,16 +1,25 @@
 import { CheerioAPI } from "cheerio"
 
 type SearchResult = {
-    bookImage: string,
-    bookReview: number,
-    bookViews: number,
-    bookDate: string,
-    bookTags: string[],
-    bookType: "Manga" | "Novel",
-    bookName: string
-    bookID: string
+    Image: string,
+    Review: number,
+    Views: number,
+    Date: string,
+    Tags: string[],
+    Type: "Manga" | "Novel",
+    Name: string
+    Id: string
 }
 
+interface SectionResultBook extends SearchResult{
+    Description: string,
+    Date?: string,
+    Tags: null
+}
+type HomePage = {
+    Title: string,
+    Books: SectionResultBook[]
+}[]
 type TManga = {
     Name: string,
     Image: string,
@@ -30,18 +39,19 @@ type TEpisode = {
     Date: string
     Views: number,
 }
-type QueryType = { lang: string, id: string }
+type lang = "en" | "es" | "br" | "it" | "ru" | "de";
+type QueryType = { lang: lang, id: string }
 type SpecialQuery = {
     $: CheerioAPI,
 } | {
-    lang?: string,
+    lang?: lang,
     id?: string
 }
 type MangaInfo = {
     Episodes: TEpisode[],
     Manga: TManga
 }
-type lang = "en" | "es" | "br" | "it" | "ru" | "de";
+
 
 export function Search(Query: QueryType): Promise<SearchResult[]>
 type FManga = {
@@ -49,6 +59,6 @@ type FManga = {
     getEpisodes: (Query: SpecialQuery) => Promise<TEpisode[]>,
     getBoth: (Query: QueryType) => Promise<MangaInfo>
 };
-
+export function Home(Query: QueryType): Promise<HomePage>
 export const Manga: FManga;
 export function Episode(Query: QueryType): Promise<string[]>

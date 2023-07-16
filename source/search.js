@@ -22,36 +22,36 @@ export async function Search({ lang, id }) {
     let book = {}
 
     // Book Meta
-    book.bookImage = $book.find(".book-pic a img").attr("src");
-    book.bookName = $book.find(".book-name").first().text();
+    book.Image = $book.find(".book-pic a img").attr("src");
+    book.Name = $book.find(".book-name").first().text();
 
-    book.bookReview = $book.find(".book-rate-num")
+    book.Review = $book.find(".book-rate-num")
       .text()
       .replace(",", "");
-    book.bookReview =
-      (book.bookReview === "" || book.bookReview === "N/A") ?
-        0 : Number(book.bookReview)
+    book.Review =
+      (book.Review === "" || book.Review === "N/A") ?
+        0 : Number(book.Review)
 
-    book.bookDate = $book.find(".book-data-time[itemprop='dateModified']").first().text();
-    book.bookViews = $book.find(".book-data-num")
+    book.Date = $book.find(".book-data-time[itemprop='dateModified']").first().text();
+    book.Views = $book.find(".book-data-num")
       .text()
       .replace(",", "");
-    book.bookViews =
-      (book.bookViews === "" || book.bookViews === "N/A") ?
-        0 : Number(book.bookViews)
+    book.Views =
+      (book.Views === "" || book.Views === "N/A") ?
+        0 : Number(book.Views)
         
-    book.bookType = $book.find(".book-type").text();
+    book.Type = $book.find(".book-type").text();
 
-    book.bookTags = [];
+    book.Tags = [];
     const tags = $book.find(".book-tags .book-tag");
     tags.each((i, _tag) => {
       const $tag = $(_tag);
-      book.bookTags.push($tag.text())
+      book.Tags.push($tag.text())
     });
 
 
     // Book ID
-    book.bookID = $book.find(".book-pic a[itemprop='url']")
+    book.Id = $book.find(".book-pic a[itemprop='url']")
       .first()
       .attr("href")
       .split("/")
