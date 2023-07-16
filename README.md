@@ -19,7 +19,7 @@ This is our RoadMap ⏲️
 - [x] Search
 - [x] Get Manga Info
 - [x] Get Episode Images
-- [ ] View home page manga 
+- [-] View home page manga (Working in it)
 
 ## Using
 Just import from the module and instance it, then run exec method
