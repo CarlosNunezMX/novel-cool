@@ -1,5 +1,5 @@
 # NovelCool Scrapper 📖
-Dependecy-Lowest NovelCool scrapper for nodejs, just using `cheerio` for DOM parsing
+Dependecy-Lowest NovelCool scrapper for nodejs, just using `node-html-parser` for DOM parsing
 using ES6 for Classes and Modules
 
 ## Now in npm 🥳
@@ -19,7 +19,7 @@ This is our RoadMap ⏲️
 - [x] Search
 - [x] Get Manga Info
 - [x] Get Episode Images
-- [-] View home page manga (Working in it)
+- [x] View home page manga (Working in it)
 
 ## Using
 Just import from the module and instance it, then run exec method
