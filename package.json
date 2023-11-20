@@ -1,20 +1,35 @@
 {
   "name": "novel-cool",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "source/index.js",
-  "type": "module",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/CarlosNunezMX/novel-cool.git"
   },
-  "keywords": ["novelcool", "manga", "novel-cool", "novelcool scrapper"],
+  "keywords": [
+    "novelcool",
+    "manga",
+    "novel-cool",
+    "novelcool scrapper"
+  ],
   "author": "CarlosNunezMX",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "1.0.0-rc.12"
+    "he": "^1.2.0",
+    "node-html-parser": "^6.1.11"
+  },
+  "devDependencies": {
+    "@types/he": "^1.2.3",
+    "typescript": "^5.2.2"
   }
 }

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "esnext",             // El nivel de JavaScript al que se va a transpilar (puedes usar es2015, es2017, etc., según tus necesidades)
+      "module": "commonjs",           // El sistema de módulos a utilizar (CommonJS para Node.js)
+      "declaration": true,           // Generar los archivos .d.ts para cada archivo .ts
+      "outDir": "./dist",             // Directorio de salida para los archivos transpilados
+      "rootDir": "./source",          // Directorio raíz de los archivos de origen
+      "esModuleInterop": true,        // Permitir la interoperabilidad entre módulos ES y CommonJS
+      "declarationDir": "./types",    // Directorio donde se guardarán los archivos .d.ts generados
+      "strict": true,                // Habilitar el modo estricto de TypeScript para una programación más segura
+      "esModuleInterop": true,       // Permitir la interoperabilidad entre módulos ES y CommonJS
+      "forceConsistentCasingInFileNames": true // Asegurar consistencia de mayúsculas/minúsculas en nombres de archivos
+    },
+    "include": ["source/**/*"],      // Patrón para incluir los archivos de origen en la compilación
+    "exclude": ["node_modules"]      // Carpetas que serán excluidas de la compilación
+  }
+  
